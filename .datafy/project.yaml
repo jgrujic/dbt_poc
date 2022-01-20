@@ -1,0 +1,13 @@
+docker:
+  path: .
+id: d0c5bbe1-1409-45e2-8dcb-1484ae4e8256
+name: dbt_poc
+resources:
+  path: resources
+streaming:
+  filename: streaming.yaml
+template: ""
+version: "0.3"
+workflows:
+  path: dags
+  version: "2"

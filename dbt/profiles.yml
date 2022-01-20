@@ -1,0 +1,36 @@
+
+default:
+  outputs:
+
+    dev:
+      type: redshift
+      threads: 1
+      host:  "neo-rsh-redshift-dev.cnkukdihbwiv.eu-west-3.redshift.amazonaws.com"
+      port: 5439
+      user: "{{ env_var('REMOTE_DBT_USER') }}"
+      pass: "{{ env_var('REMOTE_DBT_PWD') }}"
+      dbname: training
+      schema: public
+
+    devjelenadbt:
+      type: redshift
+      threads: 1
+      host:  "neo-rsh-redshift-dev.cnkukdihbwiv.eu-west-3.redshift.amazonaws.com"
+      port: 5439
+      user: "{{ env_var('REMOTE_DBT_USER') }}"
+      pass: "{{ env_var('REMOTE_DBT_PWD') }}"
+      dbname: training
+      schema: public  
+
+    prod:
+      type: redshift
+      method: iam
+      cluster_id: [cluster_id]
+      threads: [1 or more]
+      host: [host]
+      port: [port]
+      user: [prod_user]
+      dbname: [dbname]
+      schema: [prod_schema]
+
+  target: devjelenadbt
