@@ -28,3 +28,4 @@ SELECT users,
        genre
 FROM enriched_sessions
 
+l
